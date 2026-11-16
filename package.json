@@ -1,0 +1,36 @@
+{
+  "name": "read-aloud",
+  "version": "0.1.0",
+  "description": "Read-aloud web app: extract an article from a URL and read it with TTS",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"tsx watch server.ts\" \"vite\"",
+    "dev:server": "tsx watch server.ts",
+    "build": "vite build",
+    "start": "tsx server.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "express": "^4.22.3",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.25",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.5",
+    "typescript": "~5.6",
+    "vite": "^5.4.21"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
